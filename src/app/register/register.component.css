@@ -1,4 +1,4 @@
-.mainCont {
+/* .mainCont {
     font-family: sans-serif;
     background: linear-gradient(to top left, #0a2b38, rgb(24, 24, 24))no-repeat center center fixed;
     min-height: 650px;
@@ -63,3 +63,9 @@ a {
     text-decoration: none;
     color: white;
 }
+
+@media(max-width: 750px) {
+    .container {
+        width: 90%;
+    }
+} */

@@ -9,6 +9,7 @@ import { RegisterComponent } from './register/register.component';
 import { SearchPeopleComponent } from './search-people/search-people.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CategorySearchComponent } from './category-search/category-search.component';
 
 
 
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     LoginComponent,
     RegisterComponent,
     SearchPeopleComponent,
-    MainViewComponent
+    MainViewComponent,
+    CategorySearchComponent
   ],
   imports: [
     AppRoutingModule,

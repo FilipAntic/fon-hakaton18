@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
+import { TableModule } from 'primeng/table';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -26,7 +27,8 @@ import { CategorySearchComponent } from './category-search/category-search.compo
   imports: [
     AppRoutingModule,
     BrowserModule,
-    TabViewModule
+    TabViewModule,
+    TableModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

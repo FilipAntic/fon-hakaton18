@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPeopleComponent implements OnInit {
 
+
+  cols: any[];
+
   constructor() { }
 
   ngOnInit() {
+
+    this.cols = [
+      { field: 'usluga', header: 'Usluga' },
+      { field: 'najviseTrosi', header: 'Najvise trosi' },
+      { field: 'brojLjudi', header: 'Broj ljudi' },
+      { field: 'prosek', header: 'Prosek' }
+    ];
   }
 
 }

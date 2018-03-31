@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TabViewModule } from 'primeng/tabview';
+import {DropdownModule} from 'primeng/dropdown';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -11,6 +12,9 @@ import { SearchPeopleComponent } from './search-people/search-people.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategorySearchComponent } from './category-search/category-search.component';
+import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 
 
@@ -26,7 +30,10 @@ import { CategorySearchComponent } from './category-search/category-search.compo
   imports: [
     AppRoutingModule,
     BrowserModule,
-    TabViewModule
+    TabViewModule,
+    DropdownModule,
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

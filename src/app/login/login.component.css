@@ -1,7 +1,8 @@
 .logIn {
-    padding-top: 100px;
+    padding-top: 200px;
     font-family: sans-serif;
-    background: linear-gradient(to top left, #0a2b38, rgb(24, 24, 24))no-repeat center center fixed;
+    background: url("/assets/background.jpg");
+    background-size: 100vw 100vh;
     min-height: 650px;
 }
 
@@ -14,34 +15,32 @@ h1 {
     font-weight: bold;
     color: white;
     text-align: center;
-}
-
-p {
-    padding-top: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 11px;
+    padding-bottom: 15px;
 }
 
 .input {
+    color: white;
     border-bottom: rgba(186, 183, 183, 0.672) 0.5px solid;
+    margin-bottom: 20px;
 }
 
 input {
     border: none;
     width: 100%;
     background: transparent;
-    padding: 5px;
-    color: white;
     outline: none;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
-.logInButton,
-.registerButton {
+::placeholder {
+    color: white;
+    font-size: 12px;
+}
+
+.logInButton {
     margin-top: 20px;
     width: 100%;
-    background: #161616;
+    background: #ff082f;
     border-radius: 30px;
     color: white;
     padding: 10px;

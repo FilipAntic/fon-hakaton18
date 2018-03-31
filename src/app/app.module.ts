@@ -12,6 +12,9 @@ import { SearchPeopleComponent } from './search-people/search-people.component';
 import { MainViewComponent } from './main-view/main-view.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CategorySearchComponent } from './category-search/category-search.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 

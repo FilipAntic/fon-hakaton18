@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 interface Company {
   name: string;
+  phoneNumber: string;
 }
 @Component({
   selector: 'app-category-search',
@@ -23,8 +24,8 @@ export class CategorySearchComponent implements OnInit {
   constructor() {
 
     this.companies = [
-      {name: 'BigPizza'},
-      {name: 'BeoTaxi'}
+      {name: 'BigPizza', phoneNumber: '066/441-441'},
+      {name: 'BeoTaxi', phoneNumber: '065888888'}
     ];
   }
 

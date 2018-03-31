@@ -1,3 +1,13 @@
 .tabView{
   padding: 10px;
 }
+
+.img img{
+  width:15%;
+  display: block;
+  margin: auto;
+}
+
+.mainDiv{
+  min-height: 100%;
+}

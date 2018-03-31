@@ -1,7 +1,30 @@
 <div class="dropdown">
 
-  <p-dropdown [options]="companies" [(ngModel)]="selectedCompany" placeholder="Select a Company" optionLabel="name" [showClear]="true" filter="true">
+  <p-dropdown [options]="companies" [(ngModel)]="selectedCompany" placeholder="Select a Company" optionLabel="name" [showClear]="true"
+              filter="true" (onchange)="bigpizza()">
 
   </p-dropdown>
 
+</div>
+
+<div class="companyField" *ngIf="selectedCompany">
+
+  <div class="headCont">
+  <h1>{{selectedCompany.name}}</h1>
+  <p class="phoneNumber" >{{selectedCompany.phoneNumber}}</p>
+  </div>
+
+  <div class="container">
+    <p>Broj poziva</p>
+    <input pInputText type="text">
+  </div>
+
+  <div class="container">
+    <p>Vremenski opseg</p>
+    <input pInputText type="text">
+  </div>
+
+  <div class="button">
+  <button pButton type="button" label="Nadji" class="ui-button-success"></button>
+  </div>
 </div>

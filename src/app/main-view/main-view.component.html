@@ -1,10 +1,20 @@
-<div class="tabView">
+<div class="mainDiv">
+
+  <div class="img">
+    <img src="/assets/mtsLogo.png">
+  </div>
+
+  <div class="tabView">
     <p-tabView>
-        <p-tabPanel header="Category search" [selected]="true">
-            <app-category-search></app-category-search>
-        </p-tabPanel>
-        <p-tabPanel header="People search">
-            <app-search-people></app-search-people>
-        </p-tabPanel>
+      <p-tabPanel header="Category search" [selected]="true">
+        <app-category-search></app-category-search>
+      </p-tabPanel>
+      <p-tabPanel header="People search">
+        <app-search-people></app-search-people>
+      </p-tabPanel>
     </p-tabView>
+  </div>
+
 </div>
+
+

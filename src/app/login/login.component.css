@@ -1,7 +1,13 @@
 .logIn {
-    padding-top: 400px;
+    padding-top: 180px;
     font-family: sans-serif;
     /* min-height: 650px; */
+}
+
+.img img{
+  width:85%;
+  display: block;
+  margin: auto;
 }
 
 .slika {

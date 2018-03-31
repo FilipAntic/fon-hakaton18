@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TabViewModule } from 'primeng/tabview';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,11 +21,12 @@ import { CategorySearchComponent } from './category-search/category-search.compo
     RegisterComponent,
     SearchPeopleComponent,
     MainViewComponent,
-    CategorySearchComponent
+    CategorySearchComponent,
   ],
   imports: [
     AppRoutingModule,
-    BrowserModule
+    BrowserModule,
+    TabViewModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

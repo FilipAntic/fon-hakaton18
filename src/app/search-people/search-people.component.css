@@ -3,3 +3,13 @@
     width: 50%;
     float: left;
 }
+
+.chartCont {
+    width: 50%;
+    float: right;
+}
+
+.mainCont {
+    width: 100%;
+    background: black;
+}

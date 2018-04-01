@@ -14,6 +14,7 @@ export class SearchPeopleComponent implements OnInit {
   chart = [];
   cols: any[];
   data: any;
+  visible: boolean = false;
   constructor(private cdRef: ChangeDetectorRef, private http: HttpService) { }
 
   ngOnInit() {
@@ -79,4 +80,8 @@ export class SearchPeopleComponent implements OnInit {
     this.cdRef.detectChanges();
   }
 
+  showDialog() {
+    this.visible = true;
+    console.log('bravo!');
+  }
 }

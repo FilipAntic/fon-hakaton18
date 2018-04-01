@@ -1,19 +1,17 @@
 .logIn {
-    padding-top: 150px;
+    padding-top: 100px;
     font-family: sans-serif;
-    /* min-height: 650px; */
 }
 
-.img img{
-  width:85%;
-  display: block;
-  margin: auto;
+.img img {
+    width: 85%;
+    display: block;
+    margin: auto;
 }
 
 .slika {
     background: url("/assets/background.jpg");
     height: 100vh;
-    /* background-position: center; */
     background-repeat: no-repeat;
     background-size: cover;
 }

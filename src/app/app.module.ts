@@ -20,9 +20,10 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpService } from './shared/services/http.service';
 import { HttpClientModule } from '@angular/common/http';
-
-import {ImeiFinderComponent} from './imei-finder/imei-finder.component';
+import { DialogModule } from 'primeng/dialog';
+import { ImeiFinderComponent } from './imei-finder/imei-finder.component';
 import { HttpModule } from '@angular/http';
+import { PredictionComponent } from './prediction/prediction.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { HttpModule } from '@angular/http';
     SearchPeopleComponent,
     MainViewComponent,
     CategorySearchComponent,
-    ImeiFinderComponent
+    ImeiFinderComponent,
+    PredictionComponent
   ],
   imports: [
     AppRoutingModule,
@@ -47,7 +49,8 @@ import { HttpModule } from '@angular/http';
     DataTableModule,
     TableModule,
     HttpClientModule,
-    HttpModule
+    HttpModule,
+    DialogModule
   ],
   providers: [AuthService, HttpService],
   bootstrap: [AppComponent]

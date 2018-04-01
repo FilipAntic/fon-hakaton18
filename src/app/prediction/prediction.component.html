@@ -1,0 +1,29 @@
+<div class="mainCont">
+  <div class="tableCont">
+
+    <p-dataTable [value]="data" (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)" selectionMode="single"
+      [(selection)]="selected" dataKey="primaoc">
+      <p-column field="primaoc" header="Broj primaoca" [sortable]="true">
+        <ng-template let-col let-car="rowData" pTemplate="body">
+          <span>{{car.primaoc}}</span>
+        </ng-template>
+      </p-column>
+      <p-column field="pozivaoc" header="Broj poziva u toku jednog dana" [sortable]="true">
+        <ng-template let-col let-car="rowData" pTemplate="body">
+          <span>{{car.pozivaoc}}</span>
+        </ng-template>
+      </p-column>
+
+    </p-dataTable>
+    <p-dialog header="Prediction" [(visible)]="display" width="50%" [appendTo]="'body'" [responsive]="true">
+
+      <p>Proba</p>
+      <p>Proba</p>
+      <p>Proba</p>
+      <p>Proba</p>
+      <p>Proba</p>
+      <p>Proba</p>
+
+    </p-dialog>
+  </div>
+</div>

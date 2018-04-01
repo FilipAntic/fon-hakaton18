@@ -2,6 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit, } from '@angular/c
 import { Chart } from 'chart.js';
 import { HttpService } from '../shared/services/http.service';
 import { map } from "rxjs/operator/map";
+import { element } from 'protractor';
 interface Company {
   name: string;
   phoneNumber: string;
@@ -23,7 +24,7 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
 
   chart = [];
   dani = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-  brojPoziva = [];
+  brojPoziva: number[] = [];
   companies: Company[];
 
   selectedCompany: Company;
@@ -136,4 +137,49 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
     // this.cdRef.detectChanges();
   }
 
+  bigpizza() {
+    for (let i = 0; i < this.brojPoziva.length; i++) {
+      if (i % 2 == 0) {
+        this.brojPoziva[i] += (Math.random() * 20) + 1;
+      } else {
+        this.brojPoziva[i] -= (Math.random() * 20) + 1;
+      }
+
+    }
+    this.chart = new Chart('canvas', {
+      type: 'line',
+
+      // The data for our dataset
+      data: {
+        labels: this.dani,
+        datasets: [{
+          label: 'Broj poziva prema ovoj kompaniji',
+          data: this.brojPoziva,
+          backgroundColor: [
+            'rgb(255, 50, 25)',
+          ],
+          borderColor: [
+            'rgb(255, 50, 25)',
+          ],
+          fill: false,
+        }]
+      },
+
+      // Configuration options go here
+      options: {
+        legend: {
+          labels: {
+            fontColor: '#000000'
+          }
+        },
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+            }
+          }]
+        }
+      }
+    });
+  }
 }

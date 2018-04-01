@@ -2,10 +2,10 @@
   <div class="leftSide">
 
     <p>Minimalna cena</p>
-    <input type="text" pInputText>
+    <input type="text" [(ngModel)]="minVrednost" pInputText>
     <p>Trajanje ugovora</p>
     <input type="text" pInputText>
-    <button pButton type="button" class="ui-button-success" label="Pretrazi" ></button>
+    <button pButton type="button" class="ui-button-success" label="Pretrazi" (click)="pretrazi()"></button>
 
   </div>
   <div class="rightSide">

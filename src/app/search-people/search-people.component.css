@@ -1,16 +1,20 @@
 .tableCont {
     padding-top: 20px;
-    width: 48%;
+    width: 50%;
     float: left;
     border-right: black 1px solid;
-    padding-right: 35px;
+    padding-right: 15px;
+  height: 100vh;
 }
 
 .chartCont {
+  margin-top: 15px;
     padding-top: 20px;
-    width: 48%;
+    width: 49%;
     float: right;
     background-color: rgba(255, 255, 255, 0.15);
+  padding-bottom: 20px;
+  margin-left: 15px;
 }
 
 .mainCont {

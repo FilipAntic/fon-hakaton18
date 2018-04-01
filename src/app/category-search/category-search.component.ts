@@ -1,7 +1,10 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, } from '@angular/core';
-import { Chart } from 'chart.js';
-import { HttpService } from '../shared/services/http.service';
-import { map } from "rxjs/operator/map";
+import {AfterViewInit, ChangeDetectorRef, Component, OnInit,} from '@angular/core';
+import {Chart} from 'chart.js';
+import {HttpService} from '../shared/services/http.service';
+import {map} from 'rxjs/operator/map';
+import {forEach} from '@angular/router/src/utils/collection';
+import {element} from 'protractor';
+
 interface Company {
   name: string;
   phoneNumber: string;
@@ -24,12 +27,29 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
   chart = [];
   dani = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   brojPoziva = [];
+  brojAktAkcija = [12, 17, 15, 9, 7, 14, 13, 21, 18];
   companies: Company[];
-
+  zbirAkcija = 0;
   selectedCompany: Company;
 
   constructor(private cdRef: ChangeDetectorRef, private httpService: HttpService) {
 
+
+  }
+
+  ngOnInit() {
+    for (let i = 0; i < 9; i++) {
+      this.httpService.get('category-search/checkDateNumbers?dan=' + this.dani[i]).then((poziv) => {
+        this.brojPoziva.push(poziv[0].BROJ);
+      });
+      this.brojPoziva.push();
+    }
+
+    this.brojAktAkcija.forEach((element) => {
+      this.zbirAkcija += element;
+      console.log(this.zbirAkcija);
+      console.log(element);
+    });
     this.companies = [
       {
         name: 'BigPizza',
@@ -37,7 +57,7 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
         pocetakUgovora: '25.03.2018',
         istekUgovora: '25.03.2019',
         brKorisnika: '12589',
-        brAkcija: '3691'
+        brAkcija: <string>this.zbirAkcija
       },
       {
         name: 'BeoTaxi',
@@ -49,16 +69,6 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
       }
     ];
     this.selectedCompany = this.companies[0];
-  }
-
-  ngOnInit() {
-    for (let i = 0; i < 9; i++) {
-      this.httpService.get('category-search/checkDateNumbers?dan=' + this.dani[i]).then((poziv) => {
-        this.brojPoziva.push(poziv[0].BROJ);
-      });
-      this.brojPoziva.push();
-    }
-
     setTimeout(() => {
       console.log(this.brojPoziva);
       // this.chart.update();
@@ -78,7 +88,18 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
               'rgb(255, 50, 25)',
             ],
             fill: false,
-          }]
+          },
+            {
+              label: 'Broj aktiviranih akcija',
+              data: this.brojAktAkcija,
+              backgroundColor: [
+                'rgb(0, 0, 0)',
+              ],
+              borderColor: [
+                'rgb(0, 0, 0)',
+              ],
+              fill: false,
+            }]
         },
 
         // Configuration options go here

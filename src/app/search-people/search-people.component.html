@@ -25,17 +25,17 @@
 
       <p-column styleClass="col-button">
         <ng-template let-car="rowData" pTemplate="body">
-          <button type="button" pButton icon="fa-search"></button>
+          <button type="button" (click) = "showDialog()" pButton icon="fa-search"></button>
         </ng-template>
       </p-column>
     </p-dataTable>
 
   </div>
-  <div class="chartCont" *ngIf="chart">
+
+  <div class="chartCont" *ngIf="chart" (visible)="visible">
     <canvas id="canvas1" class="canvas" #canvas>
       {{chart}}
     </canvas>
-
   </div>
 
 </div>

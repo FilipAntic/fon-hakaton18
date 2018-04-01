@@ -50,7 +50,8 @@ import { PredictionComponent } from './prediction/prediction.component';
     TableModule,
     HttpClientModule,
     HttpModule,
-    DialogModule
+    DialogModule,
+
   ],
   providers: [AuthService, HttpService],
   bootstrap: [AppComponent]

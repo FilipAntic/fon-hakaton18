@@ -19,9 +19,23 @@ export class ImeiFinderComponent implements OnInit, AfterViewInit {
   range = ['150', '151-250', '251-550', '551-750', '751-1000']
   cene = [];
   show: boolean;
+  showDialog: boolean;
+
+
   constructor(private cdRef: ChangeDetectorRef, private http: HttpService) {
     this.brojTelefona = [3000, 2500, 2000, 1500, 1000];
   }
+
+  user = {
+    ime: 'Marko',
+    prezime: 'Markovic',
+    brTel: '8235f08e43c967cb9b0417ea3eb',
+    datumRodj: '23.09.1978',
+    datumPotpisa: '12.04.2016.',
+    datumIsteka: '12.04.2019.',
+    modelTelefona: 'Samsung I9100 Galaxy S II',
+    imei: '91bfff3812795a602863988b01c5d9b3'
+  };
 
   ngOnInit() {
 
@@ -94,6 +108,14 @@ export class ImeiFinderComponent implements OnInit, AfterViewInit {
       }
     });
     this.cdRef.detectChanges();
+  }
+
+  dialog() {
+    this.showDialog = true;
+  }
+
+  hideDiealog() {
+    this.showDialog = false;
   }
 
   pretrazi() {

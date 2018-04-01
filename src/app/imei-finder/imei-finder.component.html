@@ -1,6 +1,6 @@
 <div class="mainCont">
-  <div class="leftSide">
 
+  <div class="leftSide">
     <p>Minimalna cena</p>
     <input type="text" [(ngModel)]="minVrednost" pInputText>
     <p>Trajanje ugovora</p>
@@ -21,9 +21,84 @@
       <div class="rightDetails">
         <p>27</p>
       </div>
-      
+      <br>
+      <table>
+        <tr>
+          <th>Broj telefona</th>
+          <th>IMEI</th>
+          <th>Model telefona</th>
+          <th> </th>
+        </tr>
+        <tr>
+          <td>d86a5bb5644ccad6a5a9c690ee5e0681</td>
+          <td>8f3c7f85b0b69d739ae942fdfe616b8c</td>
+          <td>Samsung I9100 Galaxy S II</td>
+          <td>
+            <button (click)="dialog()"> ? </button>
+          </td>
+        </tr>
+        <tr>
+          <td>7dd1e06415f64c88404e7c75db6a35cc</td>
+          <td>8f3c7f85b0b69d739ae942fdfe616b8c</td>
+          <td>LG G3</td>
+          <td>
+            <button (click)="dialog()"> ? </button>
+          </td>
+        </tr>
+        <tr>
+          <td>0a552a9fcdcae95fd4832e387d5a1919</td>
+          <td>8f3c7f85b0b69d739ae942fdfe616b8c</td>
+          <td>iPhone 4s</td>
+          <td>
+            <button (click)="dialog()"> ? </button>
+          </td>
+        </tr>
+        <tr>
+          <td>0b8b89ad65e7cd1de987f145caf3a273</td>
+          <td>8f3c7f85b0b69d739ae942fdfe616b8c</td>
+          <td>Huawei Y300</td>
+          <td>
+            <button (click)="dialog()"> ? </button>
+          </td>
+        </tr>
+        <tr>
+          <td>598efeb757b3b3cc328f083136a9d523</td>
+          <td>91bfff3812795a602863988b01c5d9b3</td>
+          <td>iPhone 5</td>
+          <td>
+            <button (click)="dialog()"> ? </button>
+          </td>
+        </tr>
+      </table>
+
+      <p-dialog [appendTo]="'body'" [(visible)]="showDialog" modal="modal" width="350px" [responsive]="true">
+        <p-header>
+          <p>Informacije o korisniku</p>
+        </p-header>
+        <div class="userDetails">
+          <div class="detailsLeft">
+            <p>Ime: {{user.ime}}</p>
+            <p>Datum rodjenja: {{user.datumRodj}}</p>
+            <p>Br. telefona: {{user.brTel}}</p>
+            <p>Datum potpisa ugovora: {{user.datumPotpisa}}</p>
+            <p>Datum isteka: {{user.datumIsteka}}</p>
+          </div>
+
+          <div class="detailsRight">
+            <p>Prezime: {{user.prezime}}</p>
+            <p>Model telefona: {{user.modelTelefona}}</p>
+            <p>IMEI: {{user.imei}}</p>
+
+            <br>
+
+            <button pButton type="button" class="ui-button-success" (click)="hideDiealog()">Ponudi akciju</button>
+          </div>
+        </div>
+      </p-dialog>
 
     </div>
 
+
   </div>
+
 </div>

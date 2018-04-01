@@ -13,6 +13,30 @@
   margin-left: 5px;
 }
 
+.leftDetails{
+  width: 50%;
+  float: left;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.rightDetails{
+  width: 50%;
+  float: right;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.details{
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.details p{
+  font-size: 18px;
+  color: white;
+}
+
 .mainCont{
   height: 80vh;
 }

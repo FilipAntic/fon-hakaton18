@@ -18,6 +18,7 @@ export class ImeiFinderComponent implements OnInit, AfterViewInit {
   brojTelefona = [];
   range = ['150', '151-250', '251-550', '551-750', '751-1000']
   cene = [];
+  show: boolean;
   constructor(private cdRef: ChangeDetectorRef, private http: HttpService) {
     this.brojTelefona = [3000, 2500, 2000, 1500, 1000];
   }
@@ -96,6 +97,7 @@ export class ImeiFinderComponent implements OnInit, AfterViewInit {
   }
 
   pretrazi() {
+    this.show = true;
     if (this.minVrednost == '' && !this.minVrednost) {
 
       this.chart = new Chart('canvasimei', {

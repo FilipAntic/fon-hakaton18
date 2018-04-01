@@ -41,8 +41,9 @@ export class PredictionComponent implements OnInit, AfterViewInit {
             'rgb(14, 207, 204)'
           ],
           borderColor: 'rgb(124, 124, 117)',
-          borderWidth: 0.5,
-          data: [30, 11, 50]
+          borderWidth: 2,
+          data: [30, 11, 50],
+          fill: false
         }]
       },
 

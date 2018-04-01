@@ -59,7 +59,7 @@ export class ImeiFinderComponent implements OnInit, AfterViewInit {
       options: {
         title:{
           display: true,
-          text: 'Broj uredjaja',
+          text: 'Broj uredjaja poredjani po ceni ($)',
           fontColor: '#ffffff'
         },
         legend: {

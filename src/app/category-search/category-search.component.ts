@@ -69,7 +69,7 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
         data: {
           labels: this.dani,
           datasets: [{
-            label: 'Broj poziva prema BigPici',
+            label: 'Broj poziva prema ovoj kompaniji',
             data: this.brojPoziva,
             backgroundColor: [
               'rgb(255, 50, 25)',

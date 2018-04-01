@@ -1,5 +1,7 @@
 .tabView{
-  padding: 10px;
+  width:80%;
+  margin: auto;
+  /*height: 100%;*/
 }
 
 .img img{
@@ -8,6 +10,4 @@
   margin: auto;
 }
 
-.mainDiv{
-  min-height: 100%;
-}
+

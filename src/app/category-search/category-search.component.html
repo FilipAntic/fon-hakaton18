@@ -1,7 +1,6 @@
 <div class="dropdown">
 
-  <p-dropdown [options]="companies" [(ngModel)]="selectedCompany" placeholder="Select a Company" optionLabel="name" [showClear]="true"
-              filter="true" (onchange)="bigpizza()">
+  <p-dropdown [options]="companies" [(ngModel)]="selectedCompany" placeholder="Select a Company" optionLabel="name" filter="true" (onchange)="bigpizza()">
 
   </p-dropdown>
 
@@ -9,22 +8,38 @@
 
 <div class="companyField" *ngIf="selectedCompany">
 
-  <div class="headCont">
-  <h1>{{selectedCompany.name}}</h1>
-  <p class="phoneNumber" >{{selectedCompany.phoneNumber}}</p>
+  <div class="myCont">
+    <div class="headCont">
+      <h1>{{selectedCompany.name}}</h1>
+    </div>
   </div>
 
-  <div class="container">
-    <p>Broj poziva</p>
-    <input pInputText type="text">
+  <hr>
+
+  <div class="pocetakUgovora">
+    <p>Broj telefona pod ugovorom:</p>
+    <p>Pocetak ugovorne obaveze</p>
+    <p>Istek ugovorne obaveze</p>
+  </div>
+  <div class="datum">
+    <p>{{selectedCompany.phoneNumber}}</p>
+    <p>{{selectedCompany.pocetakUgovora}}</p>
+    <p>{{selectedCompany.istekUgovora}}</p>
   </div>
 
-  <div class="container">
-    <p>Vremenski opseg</p>
-    <input pInputText type="text">
+  <br>
+  <div class="brojKorisnika">
+    <p>Broj korisnika kojima nudimo uslugu:</p>
+    <p>Broj prodatih akcija:</p>
   </div>
 
-  <div class="button">
-  <button pButton type="button" label="Nadji" class="ui-button-success"></button>
+  <div class="brBrojKorisnika">
+    <p>{{selectedCompany.brKorisnika}}</p>
+    <p>{{selectedCompany.brAkcija}}</p>
   </div>
+
+  <div *ngIf="chart" class="chart">
+    <canvas id="canvas"> {{ chart }}</canvas>
+  </div>
+
 </div>

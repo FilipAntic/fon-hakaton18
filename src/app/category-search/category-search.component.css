@@ -2,32 +2,57 @@
   padding-top: 10px;
 }
 
+.headCont{
+  text-align: center;
+}
+
 h1{
   color: #ffffff;
 }
 
-.phoneNumber{
-  font-size: 20px;
-  width: 150px;
-  border-radius: 5px;
-  background-color: #ff082f;
-  padding-left: 15px;
+.chart{
+  width: 50%;
+  margin:auto;
+  background-color: rgba(255, 255, 255);
+}
+
+.pocetakUgovora{
+  margin-left: 25%;
+  float: left;
+}
+.datum{
+  margin-left: 65%;
+}
+
+.brojKorisnika{
+  margin-left: 25%;
+  float: left;
+}
+.brBrojKorisnika{
+  margin-left: 65%;
 }
 
 input{
-  /*width: 5%;*/
+  width: 50%;
   color: white;
 }
 
 .container{
-  width: 30%;
-  margin: auto;
+  width: 50%;
   float: left;
 }
 button{
   margin-top: 20px;
   width: 150px;
+
 }
 p{
-  font-size: 20px;
+  font-size: 14px;
 }
+.companyField p{
+  color: white;
+}
+.myCont{
+  width: 100%;
+}
+

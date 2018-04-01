@@ -1,0 +1,38 @@
+.leftSide{
+  border-right: black 1px solid;
+  width: 25%;
+  float: left;
+  height: 80vh;
+}
+
+.rightSide{
+  width: 73%;
+  float: right;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding-bottom: 20px;
+  margin-left: 5px;
+}
+
+.mainCont{
+  height: 80vh;
+}
+
+.leftSide p{
+  margin-top: 10px;
+  color: white;
+}
+
+.leftSide input{
+  color: white;
+  width: 85%;
+}
+
+.leftSide button{
+  width: 85%;
+  margin-top: 10px;
+  height: 30px;
+}
+
+.chart{
+  opacity: 0.85;
+}

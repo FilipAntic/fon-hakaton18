@@ -1,5 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, OnInit,} from '@angular/core';
-import { Chart } from 'chart.js';
+import {Chart} from 'chart.js';
+import {HttpService} from '../shared/services/http.service';
 
 interface Company {
   name: string;
@@ -9,6 +10,7 @@ interface Company {
   brKorisnika: string;
   brAkcija: string;
 }
+
 @Component({
   selector: 'app-category-search',
   templateUrl: './category-search.component.html',
@@ -17,31 +19,34 @@ interface Company {
 })
 
 
-
 export class CategorySearchComponent implements OnInit, AfterViewInit {
 
   chart = [];
   imena: string[] = ['jedan', 'dva', 'tri'];
-
+  dani = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   companies: Company[];
 
   selectedCompany: Company;
 
-  constructor(private cdRef: ChangeDetectorRef) {
+  constructor(private cdRef: ChangeDetectorRef, private httpService: HttpService) {
 
     this.companies = [
-      {name: 'BigPizza',
+      {
+        name: 'BigPizza',
         phoneNumber: '066/441-441',
         pocetakUgovora: '25.03.2018',
         istekUgovora: '25.03.2019',
         brKorisnika: '12589',
-        brAkcija: '3691'},
-      {name: 'BeoTaxi',
+        brAkcija: '3691'
+      },
+      {
+        name: 'BeoTaxi',
         phoneNumber: '065888888',
         pocetakUgovora: '25.03.2018',
         istekUgovora: '25.03.2019',
         brKorisnika: '12589',
-        brAkcija: '3691'}
+        brAkcija: '3691'
+      }
     ];
     this.selectedCompany = this.companies[0];
   }
@@ -61,7 +66,7 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
           data: [500, 1000, 700, 850, 100, 500, 1500],
           backgroundColor: [
             'rgb(255, 50, 25)',
-            ],
+          ],
           borderColor: [
             'rgb(255, 50, 25)',
           ],

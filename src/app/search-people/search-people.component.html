@@ -1,20 +1,25 @@
 <div class="mainCont">
   <div class="tableCont">
+
     <p-dataTable [value]="cars">
       <p-column field="usluga" header="Usluga"></p-column>
       <p-column field="najviseTrosi" header="Najvise Trosi"></p-column>
       <p-column field="brojLjudi" header="Broj Ljudi"></p-column>
       <p-column field="prosek" header="Prosek">
+
         <ng-template let-col let-car="rowData" pTemplate="body">
           <span [style.color]="car[col.field]">{{car[col.field]}}</span>
         </ng-template>
+
       </p-column>
+
       <p-column styleClass="col-button">
         <ng-template let-car="rowData" pTemplate="body">
           <button type="button" pButton icon="fa-search"></button>
         </ng-template>
       </p-column>
     </p-dataTable>
+
   </div>
   <div class="chartCont" *ngIf="chart">
     <canvas id="canvas1" class="canvas" #canvas>

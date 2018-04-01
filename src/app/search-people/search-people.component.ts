@@ -1,12 +1,14 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Chart } from 'chart.js';
 
+
 @Component({
   selector: 'app-search-people',
   templateUrl: './search-people.component.html',
   styleUrls: ['./search-people.component.css']
 })
 export class SearchPeopleComponent implements OnInit {
+
 
   chart = [];
   cols: any[];
@@ -25,7 +27,7 @@ export class SearchPeopleComponent implements OnInit {
 
   ngAfterViewInit() {
     this.chart = new Chart('canvas1', {
-      type: 'pie',
+      type: 'doughnut',
 
       // The data for our dataset
       data: {
@@ -38,7 +40,8 @@ export class SearchPeopleComponent implements OnInit {
             'rgb(30, 237, 11)',
             'rgb(237, 146, 11)',
             'rgb(237, 11, 150)',
-            'rgb(237, 222, 11)'
+            'rgb(237, 222, 11)',
+            'rgb(14, 207, 204)'
           ],
           borderColor: 'rgb(124, 124, 117)',
           borderWidth: 0.5,
@@ -47,7 +50,13 @@ export class SearchPeopleComponent implements OnInit {
       },
 
       // Configuration options go here
-      options: {}
+      options: {
+        legend: {
+          labels: {
+            fontColor: 'white'
+          }
+        }
+      }
     });
     this.cdRef.detectChanges();
   }

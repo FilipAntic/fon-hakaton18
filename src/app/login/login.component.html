@@ -1,18 +1,18 @@
 <div class="slika">
     <div class="logIn">
         <div class="container">
-          <div class="img">
-            <img src="/assets/mtsLogo.png">
-          </div>
+            <div class="img">
+                <img src="/assets/mtsLogo.png">
+            </div>
             <h1>Log In</h1>
-            <form action="post">
+            <form>
                 <div class="input">
-                    <input type="email" placeholder="Email adress">
+                    <input type="text" placeholder="Email adress">
                 </div>
                 <div class="input">
-                    <input type="password" placeholder="Password">
+                    <input type="text" placeholder="Password">
                 </div>
-                <button type="submit" class="logInButton">Log In</button>
+                <button type="submit" [routerLink]="['/main']" class="logInButton">Log In</button>
             </form>
         </div>
     </div>

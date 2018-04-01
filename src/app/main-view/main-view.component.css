@@ -1,13 +1,11 @@
-.tabView{
-  width:80%;
-  margin: auto;
-  /*height: 100%;*/
+.tabView {
+    width: 90%;
+    margin: auto;
+    height: 100%;
 }
 
-.img img{
-  width:15%;
-  display: block;
-  margin: auto;
+.img img {
+    width: 15%;
+    display: block;
+    margin: auto;
 }
-
-

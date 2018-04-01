@@ -1,58 +1,66 @@
-.dropdown{
-  padding-top: 10px;
+.dropdown {
+    padding-top: 10px;
 }
 
-.headCont{
-  text-align: center;
+.headCont {
+    text-align: center;
 }
 
-h1{
-  color: #ffffff;
+h1 {
+    color: #ffffff;
 }
 
-.chart{
-  width: 50%;
-  margin:auto;
-  background-color: rgba(255, 255, 255);
+.chart {
+    width: 50%;
+    margin: auto;
+    background-color: rgba(255, 255, 255);
 }
 
-.pocetakUgovora{
-  margin-left: 25%;
-  float: left;
-}
-.datum{
-  margin-left: 65%;
+.pocetakUgovora {
+    width: 50%;
+    text-align: right;
+    float: left;
 }
 
-.brojKorisnika{
-  margin-left: 25%;
-  float: left;
-}
-.brBrojKorisnika{
-  margin-left: 65%;
-}
-
-input{
-  width: 50%;
-  color: white;
+.datum {
+    padding-left: 30px;
+    width: 50%;
+    text-align: left;
+    float: right;
 }
 
-.container{
-  width: 50%;
-  float: left;
-}
-button{
-  margin-top: 20px;
-  width: 150px;
-
-}
-p{
-  font-size: 14px;
-}
-.companyField p{
-  color: white;
-}
-.myCont{
-  width: 100%;
+.brojKorisnika {
+    width: 50%;
+    text-align: right;
+    float: left;
 }
 
+.brBrojKorisnika {
+    width: 50%;
+    float: right;
+    text-align: left;
+    padding-left: 30px;
+}
+
+input {
+    width: 50%;
+    color: white;
+}
+
+.mycont {
+    width: 100%;
+    min-height: 180px;
+}
+
+button {
+    margin-top: 20px;
+    width: 150px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.companyField p {
+    color: white;
+}

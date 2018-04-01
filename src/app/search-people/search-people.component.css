@@ -7,6 +7,8 @@
 .chartCont {
     width: 50%;
     float: right;
+    background: white;
+    border-radius: 20px;
 }
 
 .mainCont {

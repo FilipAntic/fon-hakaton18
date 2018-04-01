@@ -20,7 +20,8 @@ import { CategorySearchComponent } from './category-search/category-search.compo
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpService } from './shared/services/http.service';
-
+import { HttpClientModule } from '@angular/common/http';
+import { HttpModule } from '@angular/http';
 
 
 
@@ -43,7 +44,9 @@ import { HttpService } from './shared/services/http.service';
     InputTextModule,
     ButtonModule,
     DataTableModule,
-    TableModule
+    TableModule,
+    HttpClientModule,
+    HttpModule
   ],
   providers: [AuthService, HttpService],
   bootstrap: [AppComponent]

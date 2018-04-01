@@ -1,7 +1,7 @@
-import {AfterViewInit, ChangeDetectorRef, Component, OnInit,} from '@angular/core';
-import {Chart} from 'chart.js';
-import {HttpService} from '../shared/services/http.service';
-
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, } from '@angular/core';
+import { Chart } from 'chart.js';
+import { HttpService } from '../shared/services/http.service';
+import { map } from "rxjs/operator/map";
 interface Company {
   name: string;
   phoneNumber: string;
@@ -24,6 +24,7 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
   chart = [];
   imena: string[] = ['jedan', 'dva', 'tri'];
   dani = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  brojPoziva = [];
   companies: Company[];
 
   selectedCompany: Company;
@@ -52,6 +53,48 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
+    for (let i = 0; i < 9; i++) {
+      this.httpService.get('category-search/checkDateNumbers?dan=' + this.dani[i]).then((poziv) => {
+        this.brojPoziva.push(poziv[0].BROJ);
+      });
+      this.brojPoziva.push();
+    }
+
+    setTimeout(() => {
+      console.log(this.brojPoziva);
+      // this.chart.update();
+      this.chart = new Chart('canvas', {
+        type: 'line',
+
+        // The data for our dataset
+        data: {
+          labels: this.dani,
+          datasets: [{
+            label: 'Broj poziva prema BigPici',
+            data: this.brojPoziva,
+            backgroundColor: [
+              'rgb(255, 50, 25)',
+            ],
+            borderColor: [
+              'rgb(255, 50, 25)',
+            ],
+            fill: false,
+          }]
+        },
+
+        // Configuration options go here
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+    }, 2000);
+
   }
 
   ngAfterViewInit() {
@@ -60,10 +103,10 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
 
       // The data for our dataset
       data: {
-        labels: ['1', '2', '3', '4', '5', '6', '7'],
+        labels: this.dani,
         datasets: [{
           label: 'Broj poziva prema BigPici',
-          data: [500, 1000, 700, 850, 100, 500, 1500],
+          data: this.brojPoziva,
           backgroundColor: [
             'rgb(255, 50, 25)',
           ],

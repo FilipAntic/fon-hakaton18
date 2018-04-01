@@ -6,11 +6,14 @@
 
   <div class="tabView">
     <p-tabView>
-      <p-tabPanel header="Pregled ugovora" [selected]="true">
+      <p-tabPanel header="Pregled ugovora">
         <app-category-search></app-category-search>
       </p-tabPanel>
       <p-tabPanel header="People search">
         <app-search-people></app-search-people>
+      </p-tabPanel>
+      <p-tabPanel header="IMEI pretrazivac" [selected]="true">
+        <app-imei-finder></app-imei-finder>
       </p-tabPanel>
     </p-tabView>
   </div>

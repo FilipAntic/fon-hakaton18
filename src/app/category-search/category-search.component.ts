@@ -22,7 +22,6 @@ interface Company {
 export class CategorySearchComponent implements OnInit, AfterViewInit {
 
   chart = [];
-  imena: string[] = ['jedan', 'dva', 'tri'];
   dani = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   brojPoziva = [];
   companies: Company[];
@@ -84,10 +83,15 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
 
         // Configuration options go here
         options: {
+          legend: {
+            labels: {
+              fontColor: '#000000'
+            }
+          },
           scales: {
             yAxes: [{
               ticks: {
-                beginAtZero: true
+                beginAtZero: true,
               }
             }]
           }
@@ -99,37 +103,37 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
 
 
   ngAfterViewInit() {
-    this.chart = new Chart('canvas', {
-      type: 'line',
-
-      // The data for our dataset
-      data: {
-        labels: this.dani,
-        datasets: [{
-          label: 'Broj poziva prema BigPici',
-          data: this.brojPoziva,
-          backgroundColor: [
-            'rgb(255, 50, 25)',
-          ],
-          borderColor: [
-            'rgb(255, 50, 25)',
-          ],
-          fill: false,
-        }]
-      },
-
-      // Configuration options go here
-      options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
-      }
-    });
-    this.cdRef.detectChanges();
+    // this.chart = new Chart('canvas', {
+    //   type: 'line',
+    //
+    //   // The data for our dataset
+    //   data: {
+    //     labels: this.dani,
+    //     datasets: [{
+    //       label: 'Broj poziva prema BigPici',
+    //       data: this.brojPoziva,
+    //       backgroundColor: [
+    //         'rgb(255, 50, 25)',
+    //       ],
+    //       borderColor: [
+    //         'rgb(255, 50, 25)',
+    //       ],
+    //       fill: false,
+    //     }]
+    //   },
+    //
+    //   // Configuration options go here
+    //   options: {
+    //     scales: {
+    //       yAxes: [{
+    //         ticks: {
+    //           beginAtZero: true
+    //         }
+    //       }]
+    //     }
+    //   }
+    // });
+    // this.cdRef.detectChanges();
   }
 
 }

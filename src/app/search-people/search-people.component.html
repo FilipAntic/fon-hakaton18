@@ -1,15 +1,25 @@
 <div class="mainCont">
   <div class="tableCont">
 
-    <p-dataTable [value]="cars">
-      <p-column field="usluga" header="Usluga"></p-column>
-      <p-column field="najviseTrosi" header="Najvise Trosi"></p-column>
-      <p-column field="brojLjudi" header="Broj Ljudi"></p-column>
+    <p-dataTable [value]="data">
+      <p-column field="usluga" header="Usluga" [sortable]="true">
+        <ng-template let-col let-car="rowData" pTemplate="body">
+          <span [style.color]="car[col.field]">{{car.ime}}</span>
+        </ng-template>
+      </p-column>
+      <p-column field="najviseTrosi" header="Najvise Trosi" [sortable]="true">
+        <ng-template let-col let-car="rowData" pTemplate="body">
+          <span [style.color]="car[col.field]">{{car.podaci}}</span>
+        </ng-template>
+      </p-column>
+      <p-column field="brojLjudi" header="Broj Ljudi" [sortable]="true">
+        <ng-template let-col let-car="rowData" pTemplate="body">
+          <span [style.color]="car[col.field]">{{car.cluster}}</span>
+        </ng-template>
+      </p-column>
       <p-column field="prosek" header="Prosek">
 
-        <ng-template let-col let-car="rowData" pTemplate="body">
-          <span [style.color]="car[col.field]">{{car[col.field]}}</span>
-        </ng-template>
+
 
       </p-column>
 

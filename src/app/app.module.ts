@@ -8,7 +8,6 @@ import { ButtonModule } from 'primeng/button';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
 
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { AuthService } from './shared/services/auth.service';
@@ -21,8 +20,9 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpService } from './shared/services/http.service';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 
+import {ImeiFinderComponent} from './imei-finder/imei-finder.component';
+import { HttpModule } from '@angular/http';
 
 
 @NgModule({
@@ -33,6 +33,7 @@ import { HttpModule } from '@angular/http';
     SearchPeopleComponent,
     MainViewComponent,
     CategorySearchComponent,
+    ImeiFinderComponent
   ],
   imports: [
     AppRoutingModule,

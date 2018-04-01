@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Chart } from 'chart.js';
+import { HttpService } from '../shared/services/http.service';
 
 
 @Component({
@@ -12,8 +13,8 @@ export class SearchPeopleComponent implements OnInit {
 
   chart = [];
   cols: any[];
-
-  constructor(private cdRef: ChangeDetectorRef) { }
+  data: any;
+  constructor(private cdRef: ChangeDetectorRef, private http: HttpService) { }
 
   ngOnInit() {
 
@@ -23,6 +24,23 @@ export class SearchPeopleComponent implements OnInit {
       { field: 'brojLjudi', header: 'Broj ljudi' },
       { field: 'prosek', header: 'Prosek' }
     ];
+    this.http.get('search-people/clusters').then((user) => {
+      // this.data.push(user);
+      this.data = user;
+    });
+
+    setTimeout(() => {
+      console.log(this.data)
+      this.data.forEach(element => {
+        if (element.podaci == 0) {
+          element.podaci = 'SMS'
+        } else if (element.podaci == 1) {
+          element.podaci = 'Pozivi'
+        } else {
+          element.podaci = 'Mobilni podaci'
+        }
+      });
+    }, 2000);
   }
 
   ngAfterViewInit() {

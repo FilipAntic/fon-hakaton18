@@ -1,7 +1,7 @@
 <div class="mainCont">
   <div class="tableCont">
 
-    <p-dataTable [value]="data">
+    <p-dataTable [value]="data" dataKey="najviseTrosi">
       <p-column field="usluga" header="Usluga" [sortable]="true">
         <ng-template let-col let-car="rowData" pTemplate="body">
           <span [style.color]="car[col.field]">{{car.ime}}</span>
@@ -17,25 +17,26 @@
           <span [style.color]="car[col.field]">{{car.cluster}}</span>
         </ng-template>
       </p-column>
-      <p-column field="prosek" header="Prosek">
-
-
-
-      </p-column>
 
       <p-column styleClass="col-button">
         <ng-template let-car="rowData" pTemplate="body">
-          <button type="button" (click) = "showDialog()" pButton icon="fa-search"></button>
+          <button type="button" (click)="showDialog(car)" pButton icon="fa-search"></button>
         </ng-template>
       </p-column>
     </p-dataTable>
 
+    <div class="cont" *ngIf="display">
+      <p>Prosecno mesecno poziva ka servisu: 29</p>
+      <p>Prosecno mesecnih transakcija : 19</p>
+      <p>Predvidjanje na osnovu prethodnih rezultata: 12</p>
+    </div>
   </div>
 
-  <div class="chartCont" *ngIf="chart" (visible)="visible">
+  <div class="chartCont" *ngIf="chart">
     <canvas id="canvas1" class="canvas" #canvas>
       {{chart}}
     </canvas>
   </div>
+
 
 </div>

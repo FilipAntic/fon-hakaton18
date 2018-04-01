@@ -17,12 +17,25 @@
     </p-dataTable>
     <p-dialog header="Predictions" [(visible)]="display" width="50%" [appendTo]="'body'" [responsive]="true">
 
-      <p>Proba</p>
-      <p>Proba</p>
-      <p>Proba</p>
-      <p>Proba</p>
-      <p>Proba</p>
-      <p>Proba</p>
+      <div class="proba">
+        <p>Naziv firme: Nis petrol</p>
+        <p>Bransa: Nafta</p>
+        <p>Koliko poziva mesecno: 50</p>
+        <!-- koliko poziva za tekuci mesec -->
+        <p>Koliko poziva u zadnjih 3 meseca:200 </p>
+        <!-- ukupan broj poziva  -->
+        <p>Prosek poziva u zadnjih 3 meseca: 75 </p>
+        <!-- //zato sto je mozda samo u jednom mesecu pozvano 1000 puta od ukupnih 1050 -->
+        <p>Na osnovu ostalih ugovora sa slicnim brojem poziva, potencijalno poboljsanje je(procentualno): 2%</p>
+        <p>Na osnovu ostalih ugovora sa slicnim brojem poziva, potencijalno poboljsanje je(brojcano): 2.000$</p>
+        <!-- predvidjanje na osnovu ostalih ugovora koji imaju slican broj poziva, koliko bi to nama poboljsalo procentualno ili brojcano -->
+        <!-- Grafikoni: mesecno broj poziva u 3 meseca, broj poziva po danima odredjenog meseca, potencijalni biznis model i potencijalno poboljsanje -->
+        <div class="chartCont" *ngIf="chart">
+          <canvas id="canvas12" class="canvas" #canvas>
+            {{chart}}
+          </canvas>
+        </div>
+      </div>
 
     </p-dialog>
   </div>

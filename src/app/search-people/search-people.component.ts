@@ -14,7 +14,8 @@ export class SearchPeopleComponent implements OnInit {
   chart = [];
   cols: any[];
   data: any;
-  visible: boolean = false;
+  display = false;
+  row;
   constructor(private cdRef: ChangeDetectorRef, private http: HttpService) { }
 
   ngOnInit() {
@@ -28,6 +29,8 @@ export class SearchPeopleComponent implements OnInit {
     this.http.get('search-people/clusters').then((user) => {
       // this.data.push(user);
       this.data = user;
+      console.clear()
+      console.log(user)
     });
 
     setTimeout(() => {
@@ -41,6 +44,38 @@ export class SearchPeopleComponent implements OnInit {
           element.podaci = 'Mobilni podaci'
         }
       });
+      this.chart = new Chart('canvas1', {
+        type: 'doughnut',
+
+        // The data for our dataset
+        data: {
+          labels: ["SMS", "Pozivi", "Mobilni podaci"],
+          datasets: [{
+            label: "My First dataset",
+            backgroundColor: [
+              'rgb(237, 11, 11)',
+              'rgb(71, 11, 237)',
+              'rgb(30, 237, 11)',
+              'rgb(237, 146, 11)',
+              'rgb(237, 11, 150)',
+              'rgb(237, 222, 11)',
+              'rgb(14, 207, 204)'
+            ],
+            borderColor: 'rgb(124, 124, 117)',
+            borderWidth: 0.5,
+            data: [this.data[0].cluster, this.data[2].cluster, this.data[4].cluster],
+          }]
+        },
+
+        // Configuration options go here
+        options: {
+          legend: {
+            labels: {
+              fontColor: 'white'
+            }
+          }
+        }
+      });
     }, 2000);
   }
 
@@ -50,7 +85,47 @@ export class SearchPeopleComponent implements OnInit {
 
       // The data for our dataset
       data: {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: ["SMS", "Pozivi", "Mobilni podaci"],
+        datasets: [{
+          label: "Mesecni broj poziva",
+          backgroundColor: [
+            'rgb(237, 11, 11)',
+            'rgb(71, 11, 237)',
+            'rgb(30, 237, 11)',
+            'rgb(237, 146, 11)',
+            'rgb(237, 11, 150)',
+            'rgb(237, 222, 11)',
+            'rgb(14, 207, 204)'
+          ],
+          borderColor: 'rgb(124, 124, 117)',
+          borderWidth: 0.5,
+          data: [this.data[0].cluster, this.data[2].cluster, this.data[4].cluster],
+          fill: false,
+        }]
+      },
+
+      // Configuration options go here
+      options: {
+        legend: {
+          labels: {
+            fontColor: 'white'
+          }
+        }
+      }
+    });
+    console.log(this.chart)
+    this.cdRef.detectChanges();
+  }
+
+  showDialog(col) {
+    console.log(col)
+    this.display = !this.display;
+    this.chart = new Chart('canvas1', {
+      type: 'doughnut',
+
+      // The data for our dataset
+      data: {
+        labels: ["SMS", "Pozivi", "Mobilni podaci"],
         datasets: [{
           label: "My First dataset",
           backgroundColor: [
@@ -64,7 +139,7 @@ export class SearchPeopleComponent implements OnInit {
           ],
           borderColor: 'rgb(124, 124, 117)',
           borderWidth: 0.5,
-          data: [15, 10, 5, 2, 20, 30, 45],
+          data: [this.data[0].cluster, this.data[2].cluster, this.data[4].cluster],
         }]
       },
 
@@ -77,11 +152,5 @@ export class SearchPeopleComponent implements OnInit {
         }
       }
     });
-    this.cdRef.detectChanges();
-  }
-
-  showDialog() {
-    this.visible = true;
-    console.log('bravo!');
   }
 }

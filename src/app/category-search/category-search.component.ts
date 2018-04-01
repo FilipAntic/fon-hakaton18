@@ -97,6 +97,7 @@ export class CategorySearchComponent implements OnInit, AfterViewInit {
 
   }
 
+
   ngAfterViewInit() {
     this.chart = new Chart('canvas', {
       type: 'line',
